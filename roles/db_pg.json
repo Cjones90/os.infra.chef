@@ -1,0 +1,19 @@
+{
+   "name": "db_pg",
+   "description": "PG server role.",
+   "json_class": "Chef::Role",
+   "default_attributes": {
+       "chef_client": {
+           "interval": 900,
+           "splay": 300
+       }
+   },
+   "override_attributes": {},
+   "chef_type": "role",
+   "run_list": [
+       "recipe[chef-client::default]",
+       "recipe[chef-client::delete_validation]",
+       "recipe[pg_server::default]"
+   ],
+   "env_run_lists": {}
+}
