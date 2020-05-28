@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures node'
 long_description 'Installs/Configures node'
-version '0.12.20'
+version '0.13.0'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 

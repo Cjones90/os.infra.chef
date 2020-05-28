@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures trusty'
 long_description 'Installs/Configures trusty'
-version '0.13.13'
+version '0.14.0'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 

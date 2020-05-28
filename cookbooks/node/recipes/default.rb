@@ -9,14 +9,6 @@ require 'json'
 include_recipe 'trusty::default'
 include_recipe 'node::ssl'
 
-directory "/root/code/jsons" do
-    recursive true
-end
-
-directory "/root/code/csv" do
-    recursive true
-end
-
 
 ##### Firewall #####
 firewall_rule 'http/https/docker' do
