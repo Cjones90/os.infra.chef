@@ -11,20 +11,20 @@ include_recipe 'node::ssl'
 
 
 ##### Firewall #####
-firewall_rule 'http/https/docker' do
-    port [80, 443, 2377, 7946]
-    protocol :tcp
-end
+# firewall_rule 'http/https/docker' do
+#     port [80, 443, 2377, 7946]
+#     protocol :tcp
+# end
+#
+# firewall_rule 'docker udp' do
+#     port [7946, 4789]
+#     protocol :udp
+# end
 
-firewall_rule 'docker udp' do
-    port [7946, 4789]
-    protocol :udp
-end
-
-ips_json = JSON.parse(::File::read("/root/code/access/ips.json"))
-
-ips_json['docker_subnets'].each do |ip|
-    firewall_rule "Allow from #{ip}" do
-        source ip
-    end
-end
+# ips_json = JSON.parse(::File::read("/root/code/access/ips.json"))
+#
+# ips_json['docker_subnets'].each do |ip|
+#     firewall_rule "Allow from #{ip}" do
+#         source ip
+#     end
+# end

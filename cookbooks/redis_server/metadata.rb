@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures redis_server'
 long_description 'Installs/Configures redis_server'
-version '0.2.10'
+version '0.3.0'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 

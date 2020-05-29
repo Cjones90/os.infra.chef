@@ -9,7 +9,7 @@
 
 
 ### Firewall
-firewall_rule 'chef_server' do
-    port [80, 443, 8888, 4433, 9683, 7080]
-    protocol :tcp
-end
+# firewall_rule 'chef_server' do
+#     port [80, 443, 8888, 4433, 9683, 7080]
+#     protocol :tcp
+# end

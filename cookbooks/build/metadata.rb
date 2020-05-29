@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures build'
 long_description 'Installs/Configures build'
-version '0.3.6'
+version '0.4.0'
 # chef_version '>= 12.1' if respond_to?(:chef_version)
 chef_version '>= 14.10' if respond_to?(:chef_version)
 

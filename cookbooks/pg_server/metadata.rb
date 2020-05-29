@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures pg_server'
 long_description 'Installs/Configures pg_server'
-version '0.7.8'
+version '0.8.0'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 
