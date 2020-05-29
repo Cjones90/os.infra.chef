@@ -4,8 +4,6 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-# fullchain = data_bag_item("secrets", "fullchain")
-# chain = data_bag_item("secrets", "chain")
 privkey = data_bag_item("secrets", "privkey")
 docker_service = data_bag_item("secrets", "docker_service")
 
@@ -13,18 +11,8 @@ docker_service = data_bag_item("secrets", "docker_service")
 # Thatll happen rarely as the ssl certs last 3 months and servers _shouldnt_ be up that long
 # But it WILL happen...
 
-
-# file "/etc/ssl/creds/fullchain.pem" do
-#     content "#{fullchain["fullchain"].gsub("\\n","\n")}"
-#     mode "0755"
-#     action :create
-# end
-#
-# file "/etc/ssl/creds/chain.pem" do
-#     content "#{chain["chain"].gsub("\\n","\n")}"
-#     mode "0755"
-#     action :create
-# end
+# inotifywait is our only solution until we implement ansible for restarting the
+# docker service on ssl renew
 
 file "/etc/ssl/creds/privkey.pem" do
     content "#{privkey["privkey"].gsub("\\n","\n")}"
