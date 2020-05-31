@@ -2,5 +2,5 @@ source 'https://supermarket.chef.io'
 
 metadata
 
-cookbook 'trusty', path: '../trusty'
+cookbook 'chef-client'
 cookbook 'sc-mongodb', '~> 1.2.0'

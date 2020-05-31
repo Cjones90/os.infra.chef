@@ -4,11 +4,11 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures mongo_server'
 long_description 'Installs/Configures mongo_server'
-version '0.6.1'
+version '0.6.2'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 
-depends 'trusty'
+depends 'chef-client', '~> 8.1.2'
 # depends 'mongodb3', '~> 5.3.0'
 depends 'sc-mongodb', '~> 1.2.0'
 

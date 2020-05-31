@@ -4,13 +4,12 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures pg_server'
 long_description 'Installs/Configures pg_server'
-version '0.8.1'
+version '0.8.2'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 
-depends 'trusty'
+depends 'chef-client', '~> 8.1.2'
 depends 'postgresql', '~> 6.1.4'
-
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.

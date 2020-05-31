@@ -4,12 +4,11 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures node'
 long_description 'Installs/Configures node'
-version '0.14.1'
+version '0.14.2'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 
-depends 'trusty'
-
+depends 'chef-client', '~> 8.1.2'
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
