@@ -12,8 +12,7 @@
    "chef_type": "role",
    "run_list": [
        "recipe[chef-client::default]",
-       "recipe[chef-client::delete_validation]",
-       "recipe[mongo_server::default]",
+       "recipe[chef-client::delete_validation]"
        "recipe[pg_server::default]"
    ],
    "env_run_lists": {}
