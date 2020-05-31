@@ -14,8 +14,7 @@
        "recipe[chef-client::default]",
        "recipe[chef-client::delete_validation]",
        "recipe[mongo_server::default]",
-       "recipe[pg_server::default]",
-       "recipe[redis_server::default]"
+       "recipe[pg_server::default]"
    ],
    "env_run_lists": {}
 }

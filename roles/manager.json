@@ -13,8 +13,7 @@
    "run_list": [
        "recipe[chef-client::default]",
        "recipe[chef-client::delete_validation]",
-       "recipe[node::default]",
-       "recipe[node::ssl]"
+       "recipe[node::default]"
    ],
    "env_run_lists": {}
 }

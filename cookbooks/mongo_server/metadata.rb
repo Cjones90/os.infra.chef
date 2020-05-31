@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures mongo_server'
 long_description 'Installs/Configures mongo_server'
-version '0.6.0'
+version '0.6.1'
 
 chef_version '>= 14.10' if respond_to?(:chef_version)
 

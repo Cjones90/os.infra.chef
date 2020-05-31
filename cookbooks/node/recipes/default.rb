@@ -4,27 +4,25 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-require 'json'
+privkey = data_bag_item("secrets", "privkey")
+docker_service = data_bag_item("secrets", "docker_service")
 
-include_recipe 'trusty::default'
-include_recipe 'node::ssl'
+# Containers/servers need to be restarted when we receive a new ssl cert
+# Thatll happen rarely as the ssl certs last 3 months and servers _shouldnt_ be up that long
+# But it WILL happen...
 
+# inotifywait is our only solution until we implement ansible for restarting the
+# docker service on ssl renew
 
-##### Firewall #####
-# firewall_rule 'http/https/docker' do
-#     port [80, 443, 2377, 7946]
-#     protocol :tcp
-# end
-#
-# firewall_rule 'docker udp' do
-#     port [7946, 4789]
-#     protocol :udp
-# end
+file "/etc/ssl/creds/privkey.pem" do
+    content "#{privkey["privkey"].gsub("\\n","\n")}"
+    mode "0755"
+    action :create
+    notifies :run, 'execute[restart-service]', :delayed
+end
 
-# ips_json = JSON.parse(::File::read("/root/code/access/ips.json"))
-#
-# ips_json['docker_subnets'].each do |ip|
-#     firewall_rule "Allow from #{ip}" do
-#         source ip
-#     end
-# end
+execute 'restart-service' do
+    command "docker service ps #{docker_service["name"]} && docker service update #{docker_service["name"]} --force;
+exit 0;"
+    action :nothing
+end
