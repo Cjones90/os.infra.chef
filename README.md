@@ -1,5 +1,6 @@
-### NOTE
-The intention is to deprecate this repository, do not use.  
+## NOTE  
+#### **Officially deprecated**  
+All functionality of this repository ported over to [**os.infra.terraform**](https://github.com/Cjones90/os.infra.terraform.git)  
 
-Goal is to move everything this repo does over to [**os.infra.terraform**](https://github.com/Cjones90/os.infra.terraform.git) and start using ansible.  
-Chef's great but too heavy for current use case.  
+
+The UFW firewall rules are the only thing not 100% ported over in favor of aws security groups at this point but soon will be re-implemented.
